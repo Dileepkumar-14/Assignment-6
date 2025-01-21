@@ -1,0 +1,78 @@
+<html>
+	<body>
+		<button onclick="displayDate()">Display Date</button>
+		<input type="text" id="date">
+		<br><br><br>
+		<button onclick="factorial()">Calculate Factorial</button>
+		<br><br><br>
+		<input type="number" id="multi">
+		<button onclick="multiply()">Generate Table</button>
+		<div id="table-output"></div>
+		<br><br><br>
+		<h2>Sum of n numbers</h2>
+		<input type="number" id="sum">
+		<button onclick="sum()">Calculate Sum</button>
+		<br><br><br>
+		<h2>Password Visibility Toggle</h2>
+		<label for="password">Password:</label>
+		<input type="password" id="password" placeholder="Enter your password">
+		<input type="checkbox" onclick="togglePasswordVisibility()">Show Password
+	</body>
+	<script>
+		function displayDate() 
+		{
+			var date=new Date();
+			document.getElementById("date").value=new Date().toLocaleDateString();
+    		}
+	</script>
+	<script>
+		function factorial()
+		{
+			var num=parseInt(prompt("Enter a number: "));
+			var fact=1;
+			for(var i=1;i<=num;i++)
+			{
+				fact=fact*i;
+			}
+			alert("Factorial of 5 is: "+fact);
+		}
+	</script>
+	<script>
+		function multiply() 
+		{
+			var num = parseInt(document.getElementById("multi").value);
+			var outputDiv = document.getElementById("table-output");
+			outputDiv.innerHTML = "";
+			for (var i = 1; i <= 10; i++) 
+			{
+				outputDiv.innerHTML += `${num} x ${i} = ${num * i}<br>`;
+			}
+		}
+	</script>
+	<script>
+		function sum()
+		{
+			var num=parseInt(document.getElementById("sum").value);
+			var sum=0;
+			for(var i=1;i<=num;i++)
+			{
+				sum=sum+i;
+			}
+			alert("Sum of numbers is: "+sum);
+		}
+	</script>
+	<script>
+		function togglePasswordVisibility() 
+		{
+			var Input = document.getElementById("password");
+			if (Input.type === "password") 
+			{
+				Input.type = "text";
+			} 
+			else 
+			{
+				Input.type = "password";
+			}
+		}
+	</script>
+</html>
